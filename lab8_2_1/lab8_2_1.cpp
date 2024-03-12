@@ -26,7 +26,7 @@ int main()
 
     for (int i = 0; i < n; i++) {
         if (a[i] < 0) {
-            negative_N += 1;
+            negative_N++;
             negative_P *= a[i];
         }
     }
@@ -41,13 +41,10 @@ int main()
 
     for (int i = 0; i < n; i++) {
         if (a[i] > 0) {
-            if (positive_N == 1) {    
-                positive_S += a[i];
-                positive_N = 2;
-                break;
-            }
-            positive_N += 1;
+            positive_N++;
+            if (positive_N == 2) break;
         }
+        if (positive_N == 1) positive_S += a[i];
     }
 
     //Виводимо результат на екран
