@@ -33,7 +33,9 @@ int main()
 
     //Виводимо результат на екран
     cout << "кількість від'ємних елементів: " << negative_N << endl;
-    cout << "добуток від'ємних елементів: " << negative_P << endl;
+    if (negative_N == 0) {
+        cout << "Від'ємних елементів нема" << endl;
+    } else cout << "добуток від'ємних елементів: " << negative_P << endl;
 
     //б) сума елементів масиву, розташованих між першим і другим додатними елементами.
     int positive_N = 0;
@@ -44,7 +46,7 @@ int main()
             positive_N++;
             if (positive_N == 2) break;
         }
-        if (positive_N == 1) positive_S += a[i];
+        else if (positive_N == 1) positive_S += a[i];
     }
 
     //Виводимо результат на екран
